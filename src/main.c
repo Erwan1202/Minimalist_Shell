@@ -25,6 +25,7 @@ int main(void){
 			if (strcmp(buffer_fgets, "exit") == 0){
 				printf("Exiting MiniShell...\n");
 				break;
+			}
 			
 			if (strcmp(buffer_fgets, "history") == 0){
 				printf("Command history is not implemented yet.\n");
@@ -37,7 +38,7 @@ int main(void){
 		// History command
 
 
-	}
+	};
 
 	return 0;
-}
+};
