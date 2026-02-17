@@ -9,5 +9,14 @@ int main(void){
 	while(1){
 		printf("MiniShell >>");
 		fflush(stdout);
+	
+		fgets(buffer_fgets, 1024, stdin);
+		//printf("You entered: %s", buffer_fgets, "\n");
 
+		
+
+
+	}
+
+	return 0;
 }

@@ -1,0 +1,14 @@
+# Exécutables
+programme
+*.out
+
+# Fichiers objets
+*.o
+
+# Fichiers de débogage
+*.dSYM/
+
+# Éditeurs
+*.swp
+*~
+.vscode/
