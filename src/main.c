@@ -11,6 +11,7 @@ int main(void){
 	int history_index = 0;
 	int total_commands = 0;
 
+	const char * separators = " ,!?;"; // Séparateurs pour la tokenisation
 	while(1){
 		printf("MiniShell >>");
 		fflush(stdout);
@@ -40,19 +41,22 @@ int main(void){
 				continue;
 			}
 
+			// Gestion et remplissage du tableau history
 			strcpy(history[history_index], buffer_fgets);
 			history_index = (history_index + 1) % 10;
 			total_commands++;
 
+			// Mise en token de la commande entrée par l'utilisateur
+			char *token = strtok(buffer_fgets, separators);
+			while (token != NULL){
+				printf("Token: %s\n", token);
+				token = strtok(NULL, separators);
+			};
+
 
 		};
 		//printf("You entered: %s", buffer_fgets, "\n");
-		
-
-		// History command
-
-
-
+	
 
 	};
 
