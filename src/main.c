@@ -4,7 +4,12 @@
 #include <string.h>
 
 int main(void){
+
 	char buffer_fgets [1024];
+
+	char history [10][1024];
+	int history_index = 0;
+	int total_commands = 0;
 
 	while(1){
 		printf("MiniShell >>");
@@ -28,14 +33,25 @@ int main(void){
 			}
 			
 			if (strcmp(buffer_fgets, "history") == 0){
-				printf("Command history is not implemented yet.\n");
+				for (int i = 0; i < (total_commands < 10 ? total_commands : 10); i++){
+					int index = (history_index - 1 - i + 10) % 10; // Calcul de l'index pour afficher les commandes dans l'ordre inverse
+					printf("%d: %s\n", total_commands - i, history[index]);
+				}
 				continue;
 			}
+
+			strcpy(history[history_index], buffer_fgets);
+			history_index = (history_index + 1) % 10;
+			total_commands++;
+
+
 		};
 		//printf("You entered: %s", buffer_fgets, "\n");
 		
 
 		// History command
+
+
 
 
 	};
